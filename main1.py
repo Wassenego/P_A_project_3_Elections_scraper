@@ -155,8 +155,6 @@ def control_arguments(args):
 if __name__ == "__main__":
     control_arguments(sys.argv)
 
-    print(F"UKLADAM DO SOUBORU: {sys.argv[2]}")
-
     # vytvoření dílčích seznamů z různých stránek na webu
     municipality_names = get_municipality_names(get_td_tags_names(get_pars_answer(send_get_demand(sys.argv[1]))))
     municipality_codes = get_municipality_codes(get_td_tags_codes(get_pars_answer(send_get_demand(sys.argv[1]))))
@@ -181,8 +179,10 @@ if __name__ == "__main__":
         row.append(registered[i])
         row.append(envelopes[i])
         row.append(valid[i])
-        data.append(row + parties_votes[i]),
-        
+        data.append(row + parties_votes[i])
+      
+    print(F"UKLADAM DO SOUBORU: {sys.argv[2]}")
+  
     # vypsání stažených dat do souboru
     with open(sys.argv[2], mode="w", newline="") as new_csv:
         writer_tool = csv.writer(new_csv, delimiter=";")
