@@ -15,13 +15,14 @@ Spuštění projektu `main1.py` v rámci příkazového řádku požaduje dva po
 ```python
 python main1.py <odkaz-uzemniho-celku> <vysledny-soubor>
 ```
-Název výseldného souboru musí být zadán i spříponou `.csv`, ve kterém budou výsledky následně uloženy.
+Název výsledného souboru musí být zadán i spříponou `.csv`, ve kterém budou výsledky následně uloženy.
 
 ## Ukázka projektu
 Výsledky hlasování pro okres Prostějov:
   1. argument: `https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=12&xnumnuts=7103`
   2. argument: `vysledky_Prostejov.csv`
-SPuštění programu:
+     
+Spuštění programu:
 ```python
 python main1.py "https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=12&xnumnuts=7103" vysledky_Prostejov.csv
 ```
@@ -33,7 +34,8 @@ UKONCUJI PROGRAM.
 ```
 Částečný výstup:
 ```
-code;location;registered;envelopes;valid;
+code;location;registered;envelopes;valid;...
 506761;Alojzov;205;145;144;29;0;0;9;0;5;17;4;1;1;0;0;18;0;5;32;0;0;6;0;0;1;1;15;0
 589268;Bedihošť;834;527;524;51;0;0;28;1;13;123;2;2;14;1;0;34;0;6;140;0;0;26;0;0;0;0;82;1
+...
 ```
