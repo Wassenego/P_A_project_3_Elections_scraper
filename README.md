@@ -2,16 +2,16 @@
 Python Academy project 3 - Elections scraper - závěrečný projekt na Python akademii od Engeta.
 
 ## Popis projektu
-Tento projekt slouží k extrahování výsledků z parlamentních voleb 2017. Odkaz k prohlédnutí [zde](https://volby.cz/pls/ps2017nss/ps3?xjazyk=CZ).
+Tento projekt slouží k extrahování výsledků z parlamentních voleb v roce 2017. Odkaz k prohlédnutí najdete [zde](https://volby.cz/pls/ps2017nss/ps3?xjazyk=CZ).
 
 ## Instalace knihoven
-Knihovny, které jsou použity v kódu, jsou uloženy v souboru `requirements.txt`. Pro instalaci doporučuji použít nové virtuální prostředí a s nainstalovaným manažerem spusti následovně:
+Knihovny, které jsou použity v kódu, jsou uloženy v souboru `requirements.txt`. Pro instalaci doporučuji použít nové virtuální prostředí a s nainstalovaným manažerem spustit následovně:
 ```python
 $ pip3 --version                    # overim verzi manazeru
 $ pip3 install -r requirements.txt  # nainstaluji knihovny
 ```
 ## Spuštění projektu
-Spuštění projektu `main1.py` v rámci příkazového řádku potřebuje dva povinné argumenty.
+Spuštění projektu `main1.py` v rámci příkazového řádku požaduje dva povinné argumenty.
 ```python
 python main1.py <odkaz-uzemniho-celku> <vysledny-soubor>
 ```
