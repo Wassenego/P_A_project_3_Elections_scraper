@@ -155,6 +155,8 @@ def control_arguments(args):
 if __name__ == "__main__":
     control_arguments(sys.argv)
 
+    print(F"UKLADAM DO SOUBORU: {sys.argv[2]}")
+
     # vytvoření dílčích seznamů z různých stránek na webu
     municipality_names = get_municipality_names(get_td_tags_names(get_pars_answer(send_get_demand(sys.argv[1]))))
     municipality_codes = get_municipality_codes(get_td_tags_codes(get_pars_answer(send_get_demand(sys.argv[1]))))
@@ -186,4 +188,5 @@ if __name__ == "__main__":
         writer_tool = csv.writer(new_csv, delimiter=";")
         writer_tool.writerow(header)
         writer_tool.writerows(data)
-     
+
+    print(f"UKONCUJI PROGRAM.")
