@@ -1,5 +1,5 @@
 # P_A_project_3_Elections_scraper
-Python Academy project 3 - Elections scraper - závěrečný projekt na Python akademii od Engeta.
+Python Academy project 3 - Elections scraper - závěrečný projekt na Python akademii na Engetu.
 
 ## Popis projektu
 Tento projekt slouží k extrahování výsledků z parlamentních voleb v roce 2017. Odkaz k prohlédnutí najdete [zde](https://volby.cz/pls/ps2017nss/ps3?xjazyk=CZ).
