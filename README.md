@@ -15,7 +15,7 @@ Spuštění projektu `main1.py` v rámci příkazového řádku požaduje dva po
 ```python
 python main1.py <odkaz-uzemniho-celku> <vysledny-soubor>
 ```
-Název výsledného souboru musí být zadán i spříponou `.csv`, ve kterém budou výsledky následně uloženy.
+Název výsledného souboru musí být zadán i s příponou `.csv`, ve kterém budou výsledky následně uloženy.
 
 ## Ukázka projektu
 Výsledky hlasování pro okres Prostějov:
