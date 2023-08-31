@@ -152,6 +152,15 @@ def control_arguments(args):
     else:
         print(f"STAHUJI DATA Z VYBRANEHO URL: {sys.argv[1]}")
 
+def write_to_file(file_name: str, first_row: list, rows: list) -> None:
+    """
+    Vypiš stažená data do souboru
+    """ 
+    with open(file_name, mode="w", newline="") as new_csv:
+        writer_tool = csv.writer(new_csv, delimiter=";")
+        writer_tool.writerow(first_row)
+        writer_tool.writerows(rows)
+
 if __name__ == "__main__":
     control_arguments(sys.argv)
 
@@ -182,11 +191,7 @@ if __name__ == "__main__":
         data.append(row + parties_votes[i])
       
     print(F"UKLADAM DO SOUBORU: {sys.argv[2]}")
-  
-    # vypsání stažených dat do souboru
-    with open(sys.argv[2], mode="w", newline="") as new_csv:
-        writer_tool = csv.writer(new_csv, delimiter=";")
-        writer_tool.writerow(header)
-        writer_tool.writerows(data)
+    
+    write_to_file(sys.argv[2], header, data)
 
     print(f"UKONCUJI PROGRAM.")
