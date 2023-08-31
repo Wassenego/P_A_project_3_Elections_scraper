@@ -29,7 +29,7 @@ district_codes = {  "1":("1100",),
 
 def slice_url_address(arg1):
     """
-    Rozděl vložený argument na indexu 1 na jednotlivé části a vlož je do seznamu.
+    Rozděl vložený argument na indexu 1 na jednotlivé části, aby šly porovnat, a vlož je do seznamu.
     """
     opening = arg1[:52]
     center = arg1[-14:-4]
@@ -165,10 +165,17 @@ if __name__ == "__main__":
     control_arguments(sys.argv)
 
     # vytvoření dílčích seznamů z různých stránek na webu
-    municipality_names = get_municipality_names(get_td_tags_names(get_pars_answer(send_get_demand(sys.argv[1]))))
-    municipality_codes = get_municipality_codes(get_td_tags_codes(get_pars_answer(send_get_demand(sys.argv[1]))))
+    demand1 = send_get_demand(sys.argv[1])
+    answer = get_pars_answer(demand1)
+    names = get_td_tags_names(answer)
+    codes = get_td_tags_codes(answer)
+    municipality_names = get_municipality_names(names)
+    municipality_codes = get_municipality_codes(codes)
     municipality_urls = make_municipality_url(sys.argv[1], municipality_codes)
-    parties_names = get_parties_names(get_td_tags_names(get_pars_answer(send_get_demand(municipality_urls[0]))))
+    demand2 = send_get_demand(municipality_urls[0])
+    answers = get_pars_answer(demand2)
+    td = get_td_tags_names(answers)
+    parties_names = get_parties_names(td)
 
     registered = [get_td_tag_registered(get_pars_answer(send_get_demand(url))) for url in municipality_urls]
     envelopes = [get_td_tag_envelopes(get_pars_answer(send_get_demand(url))) for url in municipality_urls]
@@ -191,7 +198,7 @@ if __name__ == "__main__":
         data.append(row + parties_votes[i])
       
     print(F"UKLADAM DO SOUBORU: {sys.argv[2]}")
-    
+
     write_to_file(sys.argv[2], header, data)
 
     print(f"UKONCUJI PROGRAM.")
